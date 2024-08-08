@@ -1,5 +1,5 @@
 'use client'
-import  { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaPlay, FaPause } from 'react-icons/fa';
 import { gsap } from 'gsap';
 
@@ -21,7 +21,11 @@ const BreathingExercisePage = () => {
     const countdownRef = useRef(null);
 
     const startAndStopExercise = () => {
+        if (!isStop) {
+            setTotalCycles(0)
+        }
         setIsStop(!isStop);
+
     };
 
     useEffect(() => {
